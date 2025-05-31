@@ -66,8 +66,8 @@ def preprocess(df):
         Returns:
             df: Resultant dataframe after pre-processing
     """
-    df = log_txf(df, ['annual_inc'])
-    df['emp_len'] = df['emp_length'].map(remap_emp_length)
+    # df = log_txf(df, ['annual_inc'])
+    # df['emp_len'] = df['emp_length'].map(remap_emp_length)
     return df
 
 def run(data_path):
@@ -79,7 +79,7 @@ def run(data_path):
             df: Dataframe containing the final pre-processed data
     """
     df = load_data(data_path)
-    df = preprocess(df)
+    # df = preprocess(df)
     save_data(data_path, df)
     return df
 

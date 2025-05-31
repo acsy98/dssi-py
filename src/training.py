@@ -25,7 +25,7 @@ from src.config import appconfig
 logging.basicConfig(level=logging.INFO)
 
 features = appconfig['Model']['features'].split(',')
-categorical_features = appconfig['Model']['categorical_features'].split(',')
+# categorical_features = appconfig['Model']['categorical_features'].split(',')
 numerical_features = appconfig['Model']['numerical_features'].split(',')
 label = appconfig['Model']['label']
 
@@ -46,7 +46,6 @@ def run(data_path, f1_criteria):
     preprocessor = ColumnTransformer(
         transformers=[
             ("num", numerical_transformer, numerical_features),
-            ("cat", categorical_transformer, categorical_features),
         ]
     )
     
